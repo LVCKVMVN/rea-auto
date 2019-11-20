@@ -13,7 +13,7 @@ $this->title = 'Заказ авто. пропусков РЭУ';
     rel="stylesheet">
 </head>
 
-<div class="intro">
+<!-- <div class="intro">
     <div class="container">
       <div class="intro__inner">
         <a href="/">
@@ -38,9 +38,9 @@ $this->title = 'Заказ авто. пропусков РЭУ';
       </div>
 
     </div>
-  </div> <!-- Intro -->
+  </div> Intro -->
 
-  <div class="intro-header">
+  <!-- <div class="intro-header">
     <div class="container">
       <div class="intro-header__inner">
           <a href="https://www.rea.ru/ru/Pages/About.aspx">Об университете</a>
@@ -50,7 +50,7 @@ $this->title = 'Заказ авто. пропусков РЭУ';
           <a href="https://www.rea.ru/ru/org/managements/Pages/mezhdupr.aspx">Международная деятельность</a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <section class="services">
     <div class="container">
@@ -102,7 +102,7 @@ $this->title = 'Заказ авто. пропусков РЭУ';
     </div>
   </section> <!-- Services -->
 
-  <footer class="footer-contacts">
+  <!-- <footer class="footer-contacts">
     <div class="container">
       <div class="footer-contacts__inner">
         <div class="footer-contacts__location">
@@ -142,7 +142,7 @@ $this->title = 'Заказ авто. пропусков РЭУ';
         </div>
         <iframe class="footer-contacts__map" src="https://yandex.ru/map-widget/v1/-/CGDjYRzj" width="560" height="400"
           frameborder="1" allowfullscreen="true"></iframe>
-      </div>
+      </div> -->
 
       <!-- <div class="footer-contacts__copy">
         <p> &copy; 2019 Федеральное государственное бюджетное образовательное учреждение высшего образования «Российский

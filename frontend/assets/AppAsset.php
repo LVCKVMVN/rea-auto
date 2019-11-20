@@ -14,9 +14,9 @@ class AppAsset extends AssetBundle
     public $css = [
         //'css/registration.css',
         //'css/authorization.css',
-        'css/site.css',
+        /* 'css/site.css', */
         'css/contact.css',
-        'css/font.css',
+        'css/fonts.css',
         'css/normalize.css',
         'css/style.css',
         'css/jquery.fancybox.min.css',
@@ -24,6 +24,8 @@ class AppAsset extends AssetBundle
         'css/header.css',
         'css/personalAccount.css',
         'css/createOrder.css',
+        'https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,500,700&display=swap&subset=cyrillic',
+
     ];
     public $js = [
         'js/jquery.fancybox.min.js',

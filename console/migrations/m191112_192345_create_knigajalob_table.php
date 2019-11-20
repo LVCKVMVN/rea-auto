@@ -12,7 +12,7 @@ class m191112_192345_create_knigajalob_table extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('knigajalob', [
+        $this->createTable('ComplaintBook', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(11)->notnull(),
             'subject' => $this->string(255)->notnull(),
@@ -20,13 +20,13 @@ class m191112_192345_create_knigajalob_table extends Migration
 
 
         $this->createIndex(
-            'idx-knigajalob-user_id',
-            'knigajalob',
+            'idx-ComplaintBook-user_id',
+            'ComplaintBook',
             'user_id');
 
         $this->addForeignKey(
-            'fk-knigajalob-user_id',
-            'knigajalob',
+            'fk-ComplaintBook-user_id',
+            'ComplaintBook',
             'user_id',
             'user',
             'id',
@@ -41,18 +41,18 @@ class m191112_192345_create_knigajalob_table extends Migration
     {
         
         $this->dropForeignKey(
-            'fk-knigajalob-user_id',
-            'knigajalob',
+            'fk-ComplaintBook-user_id',
+            'ComplaintBook',
             'user_id',
             'user',
             'id',
         );
 
         $this->dropIndex(
-            'idx-knigajalob-user_id',
-            'knigajalob',
+            'idx-ComplaintBook-user_id',
+            'ComplaintBook',
             'user_id');
 
-        $this->dropTable('knigajalob');
+        $this->dropTable('ComplaintBook');
     }
 }

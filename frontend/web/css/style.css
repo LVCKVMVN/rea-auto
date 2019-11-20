@@ -47,8 +47,8 @@ a{
 }
 
 .default-btn::after{
-  content: "\f105";
   font-family: 'icomoon';
+  content: "\f105";
   position: absolute;
   top: 50%;
   transform:translateY(-50%);
@@ -125,6 +125,7 @@ a{
   font-size: 18px;
   color: #2562ad;
   font-weight: 700;
+  text-decoration: underline;
 }
 
 /* Intro-header */

@@ -20,6 +20,7 @@
   text-decoration: none;
   color: #fff;
   margin-right: 20px;
+  text-decoration: none;
 
   transition: background .1s linear;
 }
@@ -37,4 +38,6 @@
 
 .nav__link:hover{
   background: #960c1c;
+  color: #fff;
+  text-decoration: none;
 }

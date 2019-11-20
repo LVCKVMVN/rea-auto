@@ -14,76 +14,134 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="en">
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="<?= Yii::$app->charset ?>">
+  <link
+    href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,500,700&display=swap&subset=cyrillic"
+    rel="stylesheet">
+  <?= Html::csrfMetaTags() ?>
+  <?php $this->head() ?>
 </head>
+
 <body>
-<?php $this->beginBody() ?>
-
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        // 'brandLabel' => Yii::$app->name,
-        // 'brandUrl' => Yii::$app->homeUrl,
-         'options' => [
-             'class' => 'navbar-inverse navbar-fixed-top',
-         ],
-    ]);
-    $menuItems = [
-    
-        ['label' => 'Рус', 'url' => ['/']],
-        ['label' => 'Eng', 'url' => ['/']],
-        ['label' => 'Светлая тема', 'url' => ['/']],
-        ['label' => 'Темна тема', 'url' => ['/']],
-        //['label' => 'Home', 'url' => ['/site/index']],
-        //['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Книга', 'url' => ['/knigajalob']],
-        ['label' => 'Контакты', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        //$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login'], 'options' => [
-            'class' => 'pull-right',
-        ]];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-left'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
-
+  <?php $this->beginBody() ?>
+  <header class="header">
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+      <nav class="nav">
+        <div class="nav__main">
+          <a href="/" class="nav__link nav__link-active">Рус</a>
+          <a href="/" class="nav__link">Eng</a>
+          <a href="/" class="nav__link">Светлая тема</a>
+          <a href="/" class="nav__link">Темная тема</a>
+          <?= Html::a('Контакты', ['/site/contact'], ['class'=>'nav__link']) ?>
+        </div>
+        <?= Html::a('Войти', ['/site/login'], ['class'=>'nav__link']) ?>
+      </nav>
     </div>
+  </header>
+
+  <div class="intro">
+    <div class="container">
+      <div class="intro__inner">
+        <a href="/">
+          <img src="img/logo.png" class="intro__logo" alt="Логотип РЭУ" height="136px">
+        </a>
+        <div class="intro__info">
+          <h1 class="intro__title">Российский экономический УНИВЕРСИТЕТ <br> имени Г.В. Плеханова</h1>
+          <p class="intro__text">Основан в 1907 году</p>
+        </div>
+        <div class="intro__link">
+          <div class="intro__branch">
+            <img src="img/marker_map.png" alt="">
+            <a href="https://www.rea.ru/ru/org/branches/default.aspx" class="intro__branch-title">22 филиала</a>
+            <p class="intro__branch-text">в России и за рубежом</p>
+          </div>
+          <div class="intro__about">
+            <img src="img/folder-small.png" alt="">
+            <a href="https://www.rea.ru/sveden/" class="intro__about-title">Сведения</a>
+            <p class="intro__about-text">об образовательной организации</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div> <!-- Intro -->
+
+  <div class="intro-header">
+    <div class="container">
+      <div class="intro-header__inner">
+        <a href="https://www.rea.ru/ru/Pages/About.aspx">Об университете</a>
+        <a href="https://www.rea.ru/ru/org/default.aspx">Структура</a>
+        <a href="https://www.rea.ru/ru/Pages/Education.aspx">Образование</a>
+        <a href="https://www.rea.ru/ru/pages/academiclife.aspx">Наука</a>
+        <a href="https://www.rea.ru/ru/org/managements/Pages/mezhdupr.aspx">Международная деятельность</a>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+  <?= $content ?>
 </div>
-
-<footer class="footer">
+  
+  <footer class="footer-contacts">
     <div class="container">
-        <p class="pull-left">&copy; <?= date('Y') ?> <?= Html::encode(Yii::$app->name) ?> </p>
-    </div>
-</footer>
+      <div class="footer-contacts__inner">
+        <div class="footer-contacts__location">
+          <p>Наше местоположение</p>
+          <p>Российская Федерация, 117997, Москва, Стремянный переулок, дом 36</p>
+        </div>
 
-<?php $this->endBody() ?>
+        <div class="footer-contacts__schedule">
+          <p>График работы:</p>
+          <p>Понедельник - Пятница 7:00 - 22:00<br>
+            Суббота <br>7:00 - 21:00<br>
+            Воскресенье<br> Выходной</p>
+        </div>
+
+        <div class="footer-contacts__social">
+          <p>Ссылки на соц.сети</p>
+          <a class="footer-contacts__social__front" href="https://vk.com/kiryxer">
+            <img src="img/social/vk.png" alt="Ссылка на ВК front-end">
+          </a>
+          <a href="https://vk.com/lvcckvmvn">
+            <img src="img/social/vk.png" alt="Ссылка на ВК back-end">
+          </a>
+        </div>
+
+        <div class="footer-contacts__comm">
+          <p>Связаться с нами</p>
+          <p>
+            <a href="tel:+79778828723" class="footer-contacts__comm__phone">+79778828723</a>
+            <a href="mailto:kiryxer@gmail.com" class="footer-contacts__comm__email">
+              kiryxer@gmail.com
+            </a>
+            <a href="tel:+79653512302" class="footer-contacts__comm__phone">+79653512302</a>
+            <a href="mailto:igorsuvid@gmail.com" class="footer-contacts__comm__email">
+              igorsuvid@gmail.com
+            </a>
+          </p>
+        </div>
+        <iframe class="footer-contacts__map" src="https://yandex.ru/map-widget/v1/-/CGDjYRzj" width="560" height="400"
+          frameborder="1" allowfullscreen="true"></iframe>
+      </div>
+
+      <div class="footer-contacts__copy">
+        <p> &copy; 2019 Федеральное государственное бюджетное образовательное учреждение высшего образования «Российский
+          экономический университет имени Г.В. Плеханова»</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+  <?php $this->endBody() ?>
 </body>
+
 </html>
 <?php $this->endPage() ?>
