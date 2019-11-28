@@ -244,6 +244,17 @@ a {
   background-image: url(../img/menu/help-icon.png);
 }
 
+.settings a::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(../img/menu/settings-icon.png);
+}
+
 .quit a::before {
   content: '';
   position: absolute;
@@ -254,6 +265,7 @@ a {
   transform: translateY(-50%);
   background-image: url(../img/menu/exit-icon.png);
 }
+
 
 .main__inner {
   display: flex;

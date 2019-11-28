@@ -58,6 +58,8 @@ return [
             'rules' => [
                 'contact' => 'site/contact',
                 'login' => 'site/login',
+                'signup' => 'site/signup',
+                'personalacc' => 'site/personalacc',
             ],
         ],
         

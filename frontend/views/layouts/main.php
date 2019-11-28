@@ -24,6 +24,7 @@ AppAsset::register($this);
     href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,500,700&display=swap&subset=cyrillic"
     rel="stylesheet">
   <?= Html::csrfMetaTags() ?>
+  <title><?= Html::encode($this->title) ?></title>
   <?php $this->head() ?>
 </head>
 
@@ -39,7 +40,13 @@ AppAsset::register($this);
           <a href="/" class="nav__link">Темная тема</a>
           <?= Html::a('Контакты', ['/site/contact'], ['class'=>'nav__link']) ?>
         </div>
-        <?= Html::a('Войти', ['/site/login'], ['class'=>'nav__link']) ?>
+        <div class="nav__buttons">
+            <?php if (Yii::$app->user->isGuest) {?>
+            <?= Html::a('Регистрация', ['/site/signup'], ['class'=>'nav__link']), Html::a('Войти', ['/site/login'], ['class'=>'nav__link']); ?>
+            <?php } else { ?>
+              <?= Html::a('Личный кабинет', ['/site/personalacc'], ['class'=>'nav__link']),
+              Html::a('Выход(' . Yii::$app->user->identity->username . ')', ['/site/logout'],  ['class'=>'nav__link']);}?>
+              </div>
       </nav>
     </div>
   </header>
@@ -82,9 +89,10 @@ AppAsset::register($this);
       </div>
     </div>
   </div>
-
+<div class = "">
 <div class="container">
   <?= $content ?>
+</div>
 </div>
   
   <footer class="footer-contacts">
