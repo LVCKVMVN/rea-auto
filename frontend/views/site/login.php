@@ -11,14 +11,11 @@ use frontend\assets\LoginAsset;
 
 LoginAsset::register($this);
 
-
 $this->title = 'Авторизация';?>
-<div class="site-login">
 
-<div class="container">
     <div class="container-login">
       <div class="container-login__form">
-        <form class="login-form" method="POST">
+      <form class="login-form" method="POST">
           <span class="login-form__title">
             Вход в аккаунт
           </span>
@@ -31,7 +28,10 @@ $this->title = 'Авторизация';?>
             <!-- <?= $form->field($model, 'rememberMe')->checkbox() ?> -->
 
             <?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+            
             <?php ActiveForm::end(); ?>
+        
+          </form>
 
                 <div class="reset-text">
                 Забыли <?= Html::a('Логин / Пароль?', ['site/request-password-reset']) ?>
@@ -48,5 +48,3 @@ $this->title = 'Авторизация';?>
       </div>
     </div>
   </div>
-</div>
-</div>

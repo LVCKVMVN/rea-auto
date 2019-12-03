@@ -9,8 +9,8 @@ $this->title = 'Заказ авто. пропусков РЭУ';
     <div class="container">
       <div class="services__top">
         <div class="services__title-box">
-          <div class="services__title">Наши услуги</div>
-          <div class="services__text">Обработка заявок на разные виды пропусков.</div>
+          <div class="services__title"> <?= Yii::t('index', 'Наши услуги')?> </div>
+          <div class="services__text"><?= Yii::t('index', 'Обработка заявок на разные виды пропусков.')?></div>
         </div>
         <div class="services__btn">
           <a href="#">Показать все услуги
@@ -19,7 +19,7 @@ $this->title = 'Заказ авто. пропусков РЭУ';
       </div>
       <div class="services__items">
         <div class="services__item">
-          <img src="img/services-1.png" alt="">
+          <img src="../img/services-1.png" alt="">
           <div class="services__item-title">Автомобильные пропуска</div>
           <div class="services__item-text">Подача заявки на автомобильный пропуск в РЭУ Им. Г.В. Плеханова</div>
           <div class="services__item-btn">
@@ -30,7 +30,7 @@ $this->title = 'Заказ авто. пропусков РЭУ';
           </div>
         </div>
         <div class="services__item">
-          <img src="img/services-2.png" alt="">
+          <img src="../img/services-2.png" alt="">
           <div class="services__item-title">Временные пропуска</div>
           <div class="services__item-text">Подача заявки на временный пропуск в РЭУ Им. Г.В. Плеханова</div>
           <div class="services__item-btn">
@@ -41,7 +41,7 @@ $this->title = 'Заказ авто. пропусков РЭУ';
           </div>
         </div>
         <div class="services__item">
-          <img src="img/services-3.png" alt="">
+          <img src="../img/services-3.png" alt="">
           <div class="services__item-title">Обычные пропуска</div>
           <div class="services__item-text">Подача заявки на обычный пропуск в РЭУ Им. Г.В. Плеханова</div>
           <div class="services__item-btn">

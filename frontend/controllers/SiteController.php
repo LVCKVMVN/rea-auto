@@ -38,6 +38,11 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [
+                        'actions' => ['personalacc'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
             'verbs' => [
@@ -62,6 +67,10 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+            // 'views' => [
+            //     'class' => \yii\web\ViewAction::className(),
+            //     'viewPrefix' => 'views/' . \Yii::$app->language
+           // ],
         ];
     }
 
@@ -77,12 +86,26 @@ class SiteController extends Controller
 
     public function actionPersonalacc()
     {
+        $this->layout = 'account';
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }else {
         return $this->render('personalacc');
         }
     }
+
+    public function actionAccsettings()
+    {
+        $this->layout = 'account';
+        return $this->render('accsettings');
+    }
+
+    public function actionOrder()
+    {
+        $this->layout = 'account';
+        return $this->render('order');
+    }
+
 
     /**
      * Logs in a user.

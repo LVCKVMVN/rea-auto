@@ -3,6 +3,7 @@
 namespace frontend\assets;
 
 use yii\web\AssetBundle;
+use Yii;
 
 /**
  * Main frontend application asset bundle.
@@ -12,9 +13,6 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        //'css/registration.css',
-        //'css/authorization.css',
-        /* 'css/site.css', */
         'css/contact.css',
         'css/fonts.css',
         'css/normalize.css',

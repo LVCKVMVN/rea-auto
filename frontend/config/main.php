@@ -8,6 +8,8 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    //'language'=>'ru-RU',
+    //'sourceLanguage' => 'en-US',
     'name'=> 'Федеральное государственное бюджетное образовательное учреждение высшего образования «Российский
     экономический университет имени Г.В. Плеханова»',
     'basePath' => dirname(__DIR__),
@@ -26,6 +28,17 @@ return [
                 'encryption' => 'tls',
             ],
         ],
+        'i18n' => [ // компонент мультизязычности
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    // 'basePath' => '@common/messages', // путь к папке с переводами
+                    // 'fileMap' => [
+                    //     'app' => 'app.php',
+                    // ],
+              ],
+            ],
+            ],
         'request' => [
             'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
@@ -53,16 +66,19 @@ return [
         ],
         
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['ru', 'en'],
+            'enableDefaultLanguageUrlCode' => true,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'contact' => 'site/contact',
-                'login' => 'site/login',
-                'signup' => 'site/signup',
-                'personalacc' => 'site/personalacc',
+                'index' => 'site/index',
+                //'<action:\w:[a-zA-Z0-9-]+>' => '<site/action>',
+                '<action:\w+>' => 'site/<action>',
+               // 'page/<view:[a-zA-Z0-9-]+>' => 'site/page',
+
             ],
         ],
-        
     ],
     'params' => $params,
 ];

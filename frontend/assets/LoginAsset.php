@@ -14,13 +14,11 @@ class LoginAsset extends AssetBundle
     public $css = [
         'css/registration.css',
         'css/authorization.css',
-        //'css/site.css',
+        'css/site.css',
         'css/fonts.css',
         'css/normalize.css',
         'css/style.css',
         'css/jquery.fancybox.min.css',
-        //'css/footer.css',
-        //'css/header.css',
         'https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,500,700&display=swap&subset=cyrillic',
 
     ];
@@ -30,7 +28,8 @@ class LoginAsset extends AssetBundle
     ];
     public $depends = [
     'yii\web\YiiAsset',
-    'yii\bootstrap\BootstrapAsset',];
+    'yii\bootstrap\BootstrapAsset',
+];
 
 }
 

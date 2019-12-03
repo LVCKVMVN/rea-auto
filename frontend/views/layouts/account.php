@@ -9,8 +9,6 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
-use yii\helpers\Url;
-
 
 AppAsset::register($this);
 ?>
@@ -37,30 +35,29 @@ AppAsset::register($this);
       <nav class="nav">
         <div class="nav__main">
         <?php 
-        if(Yii::$app->language == 'ru'): 
-          echo Html::a('Switch to EN', 
-          array_merge(Yii::$app->request->get(), [Yii::$app->controller->route, 'language' => 'en']), ['class'=>'nav__link']); 
+        if(Yii::$app->language == 'en'): 
+          echo Html::a('Рус', 
+          array_merge(Yii::$app->request->get(), [Yii::$app->controller->route, 'language' => 'ru']), ['class'=>'nav__link']); 
       else: 
-          echo Html::a('Switch to RU', 
-          array_merge(Yii::$app->request->get(),  [Yii::$app->controller->route, 'language' => 'ru']), ['class'=>'nav__link']);
+          echo Html::a('Eng', 
+          array_merge(Yii::$app->request->get(), [Yii::$app->controller->route, 'language' => 'en']), ['class'=>'nav__link']);
         endif;?>
-
-          <?= Html::a(Yii::t('app', 'Светлая тема'), ['/'], ['class'=>'nav__link']) ?>
-          <?= Html::a(Yii::t('app', 'Темная тема'), ['/'], ['class'=>'nav__link']) ?>
-          <?= Html::a(Yii::t('app', 'Контакты'), ['/site/contact'], ['class'=>'nav__link']) ?>
+          <a href="/" class="nav__link">Светлая тема</a>
+          <a href="/" class="nav__link">Темная тема</a>
+          <?= Html::a('Контакты', ['/site/contact'], ['class'=>'nav__link']) ?>
         </div>
         <div class="nav__buttons">
             <?php if (Yii::$app->user->isGuest) {?>
-            <?= Html::a(Yii::t('app', 'Регистрация'), ['/site/signup'], ['class'=>'nav__link']), Html::a(Yii::t('app', 'Войти'), ['/site/login'], ['class'=>'nav__link']); ?>
+            <?= Html::a('Регистрация', ['/site/signup'], ['class'=>'nav__link']), Html::a('Войти', ['/site/login'], ['class'=>'nav__link']); ?>
             <?php } else { ?>
-              <?= Html::a(Yii::t('app', 'Личный кабинет'), ['/site/personalacc'], ['class'=>'nav__link']),
-              Html::a(Yii::t('app', 'Выйти('). Yii::$app->user->identity->username . ')', ['/site/logout'],  ['class'=>'nav__link']);}?>
+              <?= Html::a('Личный кабинет', ['/site/personalacc'], ['class'=>'nav__link']),
+              Html::a('Выход(' . Yii::$app->user->identity->username . ')', ['/site/logout'],  ['class'=>'nav__link']);}?>
               </div>
       </nav>
     </div>
   </header>
 
-  <div class="intro">
+  <!-- <div class="intro">
     <div class="container">
       <div class="intro__inner">
         <a href="/">
@@ -83,10 +80,11 @@ AppAsset::register($this);
           </div>
         </div>
       </div>
-    </div>
-  </div> <!-- Intro -->
 
-  <div class="intro-header">
+    </div>
+  </div> Intro -->
+
+  <!-- <div class="intro-header">
     <div class="container">
       <div class="intro-header__inner">
         <a href="https://www.rea.ru/ru/Pages/About.aspx">Об университете</a>
@@ -96,17 +94,82 @@ AppAsset::register($this);
         <a href="https://www.rea.ru/ru/org/managements/Pages/mezhdupr.aspx">Международная деятельность</a>
       </div>
     </div>
-  </div>
+  </div> --> 
 
-  <div class='breadcrumbs__list'>
-        
-  </div>
 
-<div class="container">
-<?= breadcrumbs::widget( [ 'links'=> isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], 'options' => ['class' => 'breadcrumb'],]),
-   $content ?>
+  <section class="contacts">
+    <div class="container">
+      <div class="contacts__top">
+        <div class="contacts__title-box">
+          <div class="contacts__title">
+            <h2>Личный кабинет</h2>
+          </div>
+          <div class="service_text">
+          Здесь вы можете что-то
+          </div>
+      </div>
+  </section>
+
+<div class="site-about">
+    <div class="main">
+    <div class="container">
+    <?= breadcrumbs::widget( [ 'links'=> isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], 'options' => ['class' => 'breadcrumb'],])?>
+      <div class="main__inner">
+        <div class="menu">
+          <div class="menu__item">
+            <div class="main-page">
+            <?= Html::a('Личный кабинет', ['/personalacc'])?>
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="view-order">
+            <?= Html::a('Просмотр состояния заказа на пропуск', ['/site/personalacc'])?>
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="search-order">
+            <?= Html::a('Поиск заказа на пропуск', ['/site/personalacc'])?>
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="sorting-order">
+            <?= Html::a('Сортировка заказов на пропуск', ['/site/personalacc'])?>
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="create-order">
+            <?= Html::a('Заказ пропуска', ['/site/order'])?>
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="help">
+            <?= Html::a('Помощь', ['/site/contact'])?>
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="settings">
+            <?= Html::a('Настройки', ['/site/accsettings'])?>
+            </div>
+          </div>
+          <div class="menu__item">
+            <div class="quit">
+            <?= Html::a('Выход', ['/site/logout'])?>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+        <div class="site-about">
+        <?= $content ?>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
   
+
+
   <footer class="footer-contacts">
     <div class="container">
       <div class="footer-contacts__inner">
