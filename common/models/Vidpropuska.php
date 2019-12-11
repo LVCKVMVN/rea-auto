@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "vidpropuska".
  *
  * @property int $id
- * @property string $name
+ * @property string $vid_propuska_name
  *
  * @property Zakaz[] $zakazs
  */
@@ -28,8 +28,8 @@ class Vidpropuska extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['name'], 'string', 'max' => 200],
+            [['vid_propuska_name'], 'required'],
+            [['vid_propuska_name'], 'string', 'max' => 200],
         ];
     }
 
@@ -39,8 +39,8 @@ class Vidpropuska extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common/messages', 'ID'),
-            'name' => Yii::t('common/messages', 'Name'),
+            'id' => Yii::t('common', 'ID'),
+            'vid_propuska_name' => Yii::t('common', 'Vid Propuska Name'),
         ];
     }
 

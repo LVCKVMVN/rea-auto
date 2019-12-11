@@ -67,8 +67,8 @@ AppAsset::register($this);
           <img src="../img/logo.png" class="intro__logo" alt="Логотип РЭУ" height="136px">
         </a>
         <div class="intro__info">
-          <h1 class="intro__title">Российский экономический УНИВЕРСИТЕТ <br> имени Г.В. Плеханова</h1>
-          <p class="intro__text">Основан в 1907 году</p>
+          <h1 class="intro__title"> <?= Yii::t('app', 'Российский экономический УНИВЕРСИТЕТ')?> <br> <?= Yii::t('app', 'имени Г.В. Плеханова')?> </h1>
+          <p class="intro__text"> <?= Yii::t('app', 'Основан в 1907 году')?> </p>
         </div>
         <div class="intro__link">
           <div class="intro__branch">

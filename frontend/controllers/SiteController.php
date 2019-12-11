@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\OrderForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -67,10 +68,6 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
-            // 'views' => [
-            //     'class' => \yii\web\ViewAction::className(),
-            //     'viewPrefix' => 'views/' . \Yii::$app->language
-           // ],
         ];
     }
 
@@ -98,12 +95,6 @@ class SiteController extends Controller
     {
         $this->layout = 'account';
         return $this->render('accsettings');
-    }
-
-    public function actionOrder()
-    {
-        $this->layout = 'account';
-        return $this->render('order');
     }
 
 
@@ -236,4 +227,5 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
 }

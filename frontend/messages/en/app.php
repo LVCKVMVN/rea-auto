@@ -17,6 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Российский экономический УНИВЕРСИТЕТ' => 'PLEKHANOV',
+    'имени Г.В. Плеханова' => 'Russian University of Economics',
+    'Основан в 1907 году' => 'Founded in 1907',
     'Светлая тема' => 'Light mode',
     'Темная тема' => 'Dark mode',
     'Войти' => 'Login',

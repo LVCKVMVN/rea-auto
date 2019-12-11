@@ -73,8 +73,13 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'index' => 'site/index',
-                //'<action:\w:[a-zA-Z0-9-]+>' => '<site/action>',
-                '<action:\w+>' => 'site/<action>',
+                'signup' => 'site/signup',
+                'login' => 'site/login',
+                'contact' => 'site/contact',
+                'personalacc' => 'site/personalacc',
+                //'zakaz' => 'views/zakaz',
+                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+                //'<action:\w+>' => 'site/<action>',
                // 'page/<view:[a-zA-Z0-9-]+>' => 'site/page',
 
             ],

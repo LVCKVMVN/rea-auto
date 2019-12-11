@@ -24,20 +24,20 @@ class m191112_182332_create_client_table extends Migration
             'user_id' => $this->integer(11)->notnull(),
         ]);
 
-        //создание внешнего ключа user_id
-        $this->createIndex(
-            'idx-client-user_id',
-            'client',
-            'user_id');
+        // //создание внешнего ключа user_id
+        // $this->createIndex(
+        //     'idx-client-user_id',
+        //     'client',
+        //     'user_id');
 
-        $this->addForeignKey(
-            'fk-client-user_id',
-            'client',
-            'user_id',
-            'user',
-            'id',
-            'cascade', 'cascade'
-        );
+        // $this->addForeignKey(
+        //     'fk-client-user_id',
+        //     'client',
+        //     'user_id',
+        //     'user',
+        //     'id',
+        //     'cascade', 'cascade'
+        // );
 
     }
 
@@ -47,18 +47,18 @@ class m191112_182332_create_client_table extends Migration
     public function safeDown()
     {
 
-        $this->dropForeignKey(
-            'fk-client-user_id',
-            'client',
-            'user_id',
-            'user',
-            'id',
-        );
+        // $this->dropForeignKey(
+        //     'fk-client-user_id',
+        //     'client',
+        //     'user_id',
+        //     'user',
+        //     'id',
+        // );
 
-        $this->dropIndex(
-            'idx-client-user_id',
-            'client',
-            'user_id');
+        // $this->dropIndex(
+        //     'idx-client-user_id',
+        //     'client',
+        //     'user_id');
 
         $this->dropTable('client');
     }

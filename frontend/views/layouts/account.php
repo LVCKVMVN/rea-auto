@@ -45,6 +45,8 @@ AppAsset::register($this);
           <a href="/" class="nav__link">Светлая тема</a>
           <a href="/" class="nav__link">Темная тема</a>
           <?= Html::a('Контакты', ['/site/contact'], ['class'=>'nav__link']) ?>
+          <?php if (!Yii::$app->user->isGuest) {?>
+            <?= Html::a('Книга', ['/knigajalob'], ['class'=>'nav__link']);}?>
         </div>
         <div class="nav__buttons">
             <?php if (Yii::$app->user->isGuest) {?>
@@ -56,46 +58,6 @@ AppAsset::register($this);
       </nav>
     </div>
   </header>
-
-  <!-- <div class="intro">
-    <div class="container">
-      <div class="intro__inner">
-        <a href="/">
-          <img src="../img/logo.png" class="intro__logo" alt="Логотип РЭУ" height="136px">
-        </a>
-        <div class="intro__info">
-          <h1 class="intro__title">Российский экономический УНИВЕРСИТЕТ <br> имени Г.В. Плеханова</h1>
-          <p class="intro__text">Основан в 1907 году</p>
-        </div>
-        <div class="intro__link">
-          <div class="intro__branch">
-            <img src="../img/marker_map.png" alt="">
-            <a href="https://www.rea.ru/ru/org/branches/default.aspx" class="intro__branch-title">22 филиала</a>
-            <p class="intro__branch-text">в России и за рубежом</p>
-          </div>
-          <div class="intro__about">
-            <img src="../img/folder-small.png" alt="">
-            <a href="https://www.rea.ru/sveden/" class="intro__about-title">Сведения</a>
-            <p class="intro__about-text">об образовательной организации</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div> Intro -->
-
-  <!-- <div class="intro-header">
-    <div class="container">
-      <div class="intro-header__inner">
-        <a href="https://www.rea.ru/ru/Pages/About.aspx">Об университете</a>
-        <a href="https://www.rea.ru/ru/org/default.aspx">Структура</a>
-        <a href="https://www.rea.ru/ru/Pages/Education.aspx">Образование</a>
-        <a href="https://www.rea.ru/ru/pages/academiclife.aspx">Наука</a>
-        <a href="https://www.rea.ru/ru/org/managements/Pages/mezhdupr.aspx">Международная деятельность</a>
-      </div>
-    </div>
-  </div> --> 
-
 
   <section class="contacts">
     <div class="container">
@@ -118,27 +80,27 @@ AppAsset::register($this);
         <div class="menu">
           <div class="menu__item">
             <div class="main-page">
-            <?= Html::a('Личный кабинет', ['/personalacc'])?>
+            <?= Html::a('Личный кабинет', ['/site/personalacc'])?>
             </div>
           </div>
           <div class="menu__item">
             <div class="view-order">
-            <?= Html::a('Просмотр состояния заказа на пропуск', ['/site/personalacc'])?>
+            <?= Html::a('Просмотр состояния заказа на пропуск', ['/zakaz'])?>
             </div>
           </div>
           <div class="menu__item">
             <div class="search-order">
-            <?= Html::a('Поиск заказа на пропуск', ['/site/personalacc'])?>
+            <?= Html::a('Поиск заказа на пропуск', ['/zakaz'])?>
             </div>
           </div>
           <div class="menu__item">
             <div class="sorting-order">
-            <?= Html::a('Сортировка заказов на пропуск', ['/site/personalacc'])?>
+            <?= Html::a('Сортировка заказов на пропуск', ['/zakaz'])?>
             </div>
           </div>
           <div class="menu__item">
             <div class="create-order">
-            <?= Html::a('Заказ пропуска', ['/site/order'])?>
+            <?= Html::a('Заказ пропуска', ['/zakaz'])?>
             </div>
           </div>
           <div class="menu__item">

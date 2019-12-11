@@ -14,7 +14,7 @@ class m191112_182424_create_vid_propuska extends Migration
     {
         $this->createTable('vidpropuska', [
             'id' => $this->primaryKey(),
-            'name' => $this->string(200)->notnull(),
+            'vid_propuska_name' => $this->string(200)->notnull(),
         ]);
     }
 
